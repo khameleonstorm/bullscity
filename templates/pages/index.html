@@ -1,0 +1,334 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bc.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Bullcity-Home</title>
+
+
+<style>
+
+.swiper {
+width: 100%;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.swiper-slide {
+background-position: center;
+background-size: cover;
+width: 350px;
+height: 350px;
+background: rgba(22, 22, 22, 0.849);
+color: #dce6e5;
+padding: 20px;
+border-radius: 30px;
+box-shadow: 2px 2px 3px rgba(43, 46, 45, 0.747);
+background-image: linear-gradient(90deg,rgb(26, 38, 39),rgba(25, 14, 27, 0.897)); 
+}
+.swiper-slide h1{
+padding-bottom: 20px;
+font-size: 2.5rem;
+color: #33f3e9b7;
+}
+.swiper-slide h2{
+padding-bottom: 20px;
+}
+.swiper-slide p{
+padding-bottom: 20px;
+font-size: 1.1rem;
+color: rgba(240, 248, 255, 0.76);
+}
+
+
+
+
+
+@media only screen and (max-width: 868px) {
+
+.swiper {
+width: 100%;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.swiper-slide {
+background-position: center;
+background-size: cover;
+width: 220px;
+height: 300px;
+padding: 15px;
+border-radius: 20px;
+}
+.swiper-slide h1{
+padding-bottom: 20px;
+font-size: 2.2rem;
+color: #33f3e9b7;
+}
+.swiper-slide h2{
+padding-bottom: 10px;
+font-size: 1.2rem;
+}
+.swiper-slide p{
+padding-bottom: 16px;
+font-size: 0.8rem;
+line-height: 1.6;
+color: rgba(240, 248, 255, 0.76);
+}
+.swiper-slide img{
+width: 100%;
+height: 270px;
+border-radius: 15px;
+border: 3px solid #03ffff2a;
+}
+.swiper-slide b{
+font-size: 1.4rem;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 70px;
+line-height: 1.8;
+}
+
+}
+</style>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+    <section class="fs-container">
+        <header class="header">
+            <nav class="navbar">
+                <a href="{% url 'index' %}" class="nav-logo"><h1>BULLCITY</h1></a>
+            <ul class="nav-menu nav-menu2">
+                {% if user.is_authenticated  %}
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://t.me/bullcitysupport" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://t.me/bullcitysupport" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'login' %}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'signup' %}" class="nav-link">Sign-Up</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        </header>
+        <div class="fs">
+            <div class="ft">
+                <img src="{% static 'img/Ancient_God_of_Bull_by_Denewer_on_DeviantArt-removebg-preview.png' %}" alt="bull-head">
+                <h1>Buy. Farm. Profit. Repeat</h1>
+                <p>Bullcity is a farming platform. Each level unlocks an additional level of benefits and profitability, rewarding holders of $Bull as much as possible.
+                    At the moment our tiers provide extra APY in the form of $Bull tokens, while base profits are given in the farmed coin. In the future the tiers will 
+                    unlock more utilities such as: referral rewards, generative NFT rewards, exclusive farming opportunities, and more.</p>
+                {% if user.is_authenticated  %}
+                <a href="{% url 'deposit' %}">Buy Bull</a>
+                {% else %}
+                <a href="{% url 'login' %}">Buy Bull</a>
+                {% endif %}
+            </div>
+            <div class="fimg">
+                 <b>Welcome to Bullcity!!!</b>
+                <img src="{% static 'img/Cavaleiro_de_Tauron-removebg-preview.png' %}" alt="bull-god">
+            </div>
+        </div>
+    
+    </section>
+    
+    <section class="ss swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="nft swiper-slide" data-swiper-autoplay="10000"><b>NFT MARKETPLACE "COMING SOON!"</b></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>BEAR VILEIN</p><img src="{% static 'img/Werebear.jpg' %}" alt="vilein"></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>THE BULL DOG</p><img src="{% static 'img/FANTASMAGORIK® DARK BULL.png' %}" alt="BULL-DOG"></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>SOUL BEAST</p><img src="{% static 'img/Demon Beast WIP, Preston Law.jpg' %}" alt="groung breaker"></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>MYSTICAL WARRIOR</p><img src="{% static 'img/Agreus by Nightwing-Kain on DeviantArt.jpg' %}" alt="MYSTICAL"></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>GHOST BULL</p><img src="{% static 'img/suffer, ivan stan.jpg' %}" alt="KNIGHT"></div>
+            <div class="nft swiper-slide" data-swiper-autoplay="5000"><p>LORD DIABLO </p><img src="{% static 'img/@ @ H0WIEE HOWIEE  - Gallery.jpg' %}" alt="battle-lord"></div>
+        </div>
+    </section>
+    
+    <section class="ts">
+        <div>
+            <img src="{% static 'img/Sorry_Bitcoin_Bears__This_Bull_Run_Is_Not_Over-removebg-preview.png' %}" alt="bull vs bear">
+        </div>
+        <div>
+            <img src="{% static 'img/Bullion-removebg-preview.png' %}" alt="bull logo">
+            <h1>We've got no rooms for bears in our city</h1>
+            <p>Bullcity is a community for expert realist traders called the bulls. The aim is to keep the market bullish with the steady supply of Bull tokens. 
+                We fight to protect the city from bear invaders, buying any of the Bull NFT will give you a GOD position in  Bullcity
+                when we launch one of the largest NFT MARKETPLACE the world has ever known.
+                Buy tokens and stake the industry's top coins for the best APY returns and farm Bull tokens.   
+            </p>
+            {% if user.is_authenticated  %}
+            <a href="{% url 'deposit' %}">Earn Bull Tokens</a>
+            {% else %}
+            <a href="{% url 'login' %}">Earn Bull Tokens</a>
+            {% endif %}
+        </div>
+    </section>
+    
+    <section class="farm-sec">
+        <div class="farm-txt">
+            <h1>You've almost completed your task as a Bull trader, hang on! the battle is almost over</h1>
+            <h2>Stake and farm with the listed coins, your persistent consistency will be rewarded daily to your portfolio. The BullGods never loose ! </h2>
+        </div>
+    
+        <div class="farm-con">
+            <div class="farm-scon">
+                <div class="farm anime1">
+                    <img src="{% static 'img/btc.png' %}" alt="btc logo">
+                    <h1>Start Farming Bitcoin</h1>
+                    <p>APR 58%</p>
+                    {% if user.is_authenticated  %}
+                    <a href="{% url 'btc' %}" style=" background: #fd9855; animation-delay: 5s;">Farm Token</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" style=" background: #fd9855; animation-delay: 5s;">Farm Token</a>
+                    {% endif %}
+                </div>
+               
+                <div class="farm anime2">
+                    <img src="{% static 'img/eth.png' %}" alt="ethereum logo">
+                    <h1>Start Farming Ethereum</h1>
+                    <p>APR 50%</p>
+                    {% if user.is_authenticated  %}
+                    <a href="{% url 'eth' %}" style="background-image: linear-gradient(60deg, #90b1f7, #6294fff6); animation-delay: 7s;">Farm Token</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" style="background-image: linear-gradient(60deg, #90b1f7, #6294fff6); animation-delay: 7s;">Farm Token</a>
+                    {% endif %}
+                </div>
+    
+                <div class="farm anime3">
+                    <img src="{% static 'img/bnb.png' %}" alt="bnb coin logo">
+                    <h1>Start Farming BNB</h1>
+                    <p>APR 41%</p>            
+                    {% if user.is_authenticated  %}
+                    <a href="{% url 'bnb' %}" style="background-image: linear-gradient(90deg, #f8d71cf1, #f7c31bfa);">Farm Token</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" style="background-image: linear-gradient(90deg, #f8d71cf1, #f7c31bfa);">Farm Token</a>
+                    {% endif %}
+                   </div>
+    
+            </div>
+    
+            <div class="farm-scon1">
+                               
+                <div class="farm anime4">
+                    <img src="{% static 'img/sol.png' %}" alt="solana logo">
+                    <h1>Start Farming Solana</h1>
+                    <p>APR 77%</p>
+                   {% if user.is_authenticated  %}
+                   <a href="{% url 'sol' %}" style="background-image: linear-gradient(90deg, #88aefff8, #5e83ff);">Farm Token</a>
+                   {% else %}
+                   <a href="{% url 'login' %}" style="background-image: linear-gradient(90deg, #88aefff8, #5e83ff);">Farm Token</a>
+                   {% endif %}
+                </div>    
+           
+              <div class="farm anime5">
+                <img src="{% static 'img/tether.png' %}" alt="tether logo">
+                <h1>Start Farming USDT</h1>
+                <p>APR 83%</p>
+                {% if user.is_authenticated  %}
+                <a  href="{% url 'usdt' %}" style="background-image: linear-gradient(90deg, #47cec7, #29d4e0);">Farm Token</a>
+                {% else %}
+                <a  href="{% url 'login' %}" style="background-image: linear-gradient(90deg, #47cec7, #29d4e0);">Farm Token</a>
+                {% endif %}
+              </div> 
+    
+            </div>
+    
+        </div>
+    </section>
+    <div class="rh">
+        <h1>Roadmap</h1>
+    </div>
+    
+    <section>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-swiper-autoplay="5000">
+                    <h1>.01</h1>
+                    <h2>MINT NFT</h2>
+                    <p>Our first mission is to build a market-place where the
+                    Bulls can exchange and mint NFTs with little or no
+                    gas fee involved.
+                    </p>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="5000">
+                    <h1>.02</h1>
+                    <h2>THE PROTO-TYPE</h2>
+                    <p>We'll be giving the first set of Bull proto-type NFTs 
+                    to the first Bulls who engage actively by staking, 
+                    trading and gaining victory in the fight between Bulls 
+                    and the bears.
+                    </p>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="5000">
+                    <h1>.03</h1>
+                    <h2>THE BUSINESS CLUB</h2>
+                    <p>As a Bull holder, you'll have instant membership in our exclusive community full of top players in the NFT and crypto world.
+                        This includes both live events and VR meetups where you can connect with major influencers in the Business Community.
+                    </p>
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="5000">
+                    <h1>.04</h1>
+                    <h2>THE BULL COLONY</h2>
+                    <p>Our core purpose is creating a colony where crypto hodlers and investors never get to worry about the bearish market.
+                        Good returns are guaranteed and the more the Bulls trade to keep the market bullish the more your assets get multiplied.
+                    </p>
+                </div>
+              </div>
+         </div>
+    </section>
+    <footer>
+        <div class="partners">
+            <img src="{% static 'img/Trust_Wallet_Blue.png' %}" alt="trust wallet">
+            <img src="{% static 'img/benq.png' %}" alt="benq">
+            <img src="{% static 'img/opensea.png' %}" alt="opensea">
+            <img src="{% static 'img/Exodus.png' %}" alt="exodus">
+        </div>
+        <div class="logo"><a href="{% url 'index' %}"><h1>BULLCITY</h1></a></div>
+           <div class="icons">
+               <a href="#"><img src="{% static 'img/discord.png' %}" alt="discord"></a>
+               <a href="#"><img src="{% static 'img/Free_Twitter_3D_Illustration_download_in_PNG__OBJ_or_Blend_format-removebg-preview.png' %}" alt="twitter"></a>
+               <a href="https://t.me/bullcitysupport"><img src="{% static 'img/telegram.png' %}" alt="telegram"></a>
+           </div>
+        <div class="copy"> <p>Copyright 2021 BULLCITY. All Rights Reserved</p></div>
+    </footer>
+
+<script src="{% static 'js/app.js' %}"></script> 
+
+</body>
+</html>

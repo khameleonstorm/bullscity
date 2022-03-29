@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{% static 'css/bc.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+
+        #message{
+            color: rgba(205, 35, 9);
+            background: rgba(205, 35, 9, 0.15);
+            padding: 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+        </style>
+</head>
+<body>
+    <section class="sign">
+        <header class="header">
+            <nav class="navbar">
+                <a href="{% url 'index' %}" class="nav-logo"><h1>BULLCITY</h1></a>
+            <ul class="nav-menu nav-menu2">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://t.me/bullcitysupport" class="nav-link">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'login' %}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'signup' %}" class="nav-link">Sign-Up</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        </header>
+
+        
+        <div class="form-container">
+            <div><h1>Login</h1></div>
+            {% for message in messages %}
+            <h3 id="message">{{message}}</h3>
+            {% endfor %}
+            <div>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+
+                    <label for="username">Username</label><br>
+                    <input type="username" id="username" name="username" autocomplete="on" required><br>
+
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password" name="password" required><br>
+
+                    <input type="submit" value="Submit" class="submit">
+                </form>
+            </div>
+            <div>
+                <p>Don't have an account?</p>
+                <a href="{% url 'signup' %}">Sign-Up</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="partners">
+            <img src="{% static 'img/Trust_Wallet_Blue.png' %}" alt="trust wallet">
+            <img src="{% static 'img/benq.png' %}" alt="benq">
+            <img src="{% static 'img/opensea.png' %}" alt="opensea">
+            <img src="{% static 'img/Exodus.png' %}" alt="exodus">
+        </div>
+        <div class="logo"><a href="{% url 'index' %}"><h1>BULLCITY</h1></a></div>
+           <div class="icons">
+                <a href="#"><img src="{% static 'img/discord.png' %}" alt="discord"></a>
+                <a href="#"><img src="{% static 'img/Free_Twitter_3D_Illustration_download_in_PNG__OBJ_or_Blend_format-removebg-preview.png' %}" alt="twitter"></a>
+                <a href="https://t.me/bullcitysupport"><img src="{% static 'img/telegram.png' %}" alt="telegram"></a>
+           </div>
+        <div class="copy"> <p>Copyright 2021 BULLCITY. All Rights Reserved</p></div>
+    </footer>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

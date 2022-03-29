@@ -1,0 +1,80 @@
+
+.sign header{
+width: 100%;
+background: none;
+}
+
+
+.sign{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: rgba(14, 16, 17, 0.301);
+padding-bottom: 50px;
+}
+
+.container{
+width: 35%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: rgba(216, 213, 213, 0.774);
+padding: 20px;
+padding-top: 20px;
+padding-bottom: 40px;
+border-radius: 30px;
+margin-top: 50px;
+text-align: center;
+background-image: linear-gradient(140deg, rgba(22, 29, 46, 0.418), rgba(8, 37, 31, 0.466));
+}
+
+.container h2{
+color: rgba(6, 150, 160, 0.904);
+font-size: 2rem;
+padding-bottom: 20px;
+padding-top: 20px;
+}
+
+
+.container a{
+width: 80%;
+background: transparent;
+border: 3px solid rgba(6, 150, 160, 0.452);
+border-radius: 40px;
+margin-bottom: 15px;
+padding: 13px;
+color: rgba(245, 245, 245, 0.87);
+font-size: 1.2rem;
+}
+
+
+.container a:hover{
+color: black;
+background: rgba(6, 150, 160, 0.452);
+}
+
+
+
+
+@media only screen and (max-width: 968px){
+
+.active{
+right: -1%;
+}
+
+.container{
+width: 90%;
+}    
+.container h2{
+font-size: 1.8rem;
+}    
+
+footer{
+padding-top: 20px;
+}
+
+
+}

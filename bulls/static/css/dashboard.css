@@ -1,0 +1,327 @@
+.dash{
+width: 100%;
+background: black;
+}
+
+.header1 h1{
+border: none;
+}
+
+.header1{
+width: 100%;
+background: inherit;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+}
+
+
+.nbar{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-top: 10px;
+}
+
+.burger {
+width: 40%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
+.nav-greet{
+width: 40%;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+justify-content: flex-end;
+color: rgba(5, 125, 133, 0.801);
+}
+
+
+.burger .bar:nth-child(1) {
+width: 36px;
+}
+
+.burger .bar:nth-child(2) {
+width: 25px;
+}
+
+.burger .bar:nth-child(3) {
+width: 10px;
+}
+
+
+
+.burger.active .bar:nth-child(2) {
+opacity: 0;
+}
+
+.burger.active .bar:nth-child(1) {
+transform: translateY(11px) rotate(45deg);
+width: 40px;
+}
+
+.burger.active .bar:nth-child(3) {
+transform: translateY(-11px) rotate(-45deg);
+width: 40px;
+}
+
+.active{
+left: -1%;
+}
+
+.burger .bar {
+display: block;
+width: 36px;
+height: 5px;
+margin: 3px;
+background: rgba(5, 125, 133, 0.801);
+transition: all 0.5s ease-in-out;
+}
+
+.back{
+width: 13%;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 55px;
+padding-top: 50px;
+padding-bottom: 55px;
+border-radius: 30px;
+color: rgba(240, 248, 255, 0.712);
+position: fixed;
+top: 65px;
+left: -100%;
+transition: 0.6s;
+background-image: linear-gradient(140deg, rgb(21, 26, 41, 0.95), rgb(13, 43, 36, 0.93)); 
+text-align: left;
+font-size: 1.2rem;
+z-index: 10;
+}
+
+
+.scrolling{
+transition: 1s;
+opacity: 0%;
+}
+
+.dash .active{
+left: -1%;
+}
+
+.back li{
+width: 60%;
+}
+
+
+
+
+.yourd{
+width: 100%;
+background: inherit;
+font-size: 1.2rem;
+color: rgba(5, 125, 133, 0.801);
+padding-right: 20px;
+padding-bottom: 15px;
+padding-top: 30px;
+padding: 15px;
+}
+
+.acc-bal{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: inherit;
+padding: 50px;
+}
+
+
+.acc-bal .bal{
+width: 30%;
+background-image: linear-gradient(80deg, rgba(3, 49, 51, 0.4), rgba(2, 56, 44, 0.6)); 
+color: rgba(245, 245, 245, 0.836);
+border-radius: 20px;
+padding: 20px;
+padding-bottom: 30px;
+}
+
+.acc-bal div img{
+width: 18%;
+opacity: 70%;
+}
+
+.acc-bal div p{
+font-size: 1.1rem;
+padding-top: 30px;
+padding-bottom: 20px;
+opacity: 30%;
+}
+
+.acc-bal div h2{
+font-size: 2.2rem;
+}
+
+
+.dw{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background: inherit;
+padding: 7px;
+}
+
+.dw div{
+width: 26%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.dw a{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 17px;
+font-size: 1.2rem;
+background: rgba(0, 0, 0, 0.151);
+border: 2px solid rgb(11, 145, 179);
+border-radius: 50px;
+color: rgba(241, 241, 241, 0.548);
+}
+
+.dw div:nth-child(2) a{
+background: rgba(0, 0, 0, 0.007);
+}
+
+.help{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: inherit;
+padding-top: 30px;
+text-align: center;
+}
+
+.help p{
+font-size: 1.1rem;
+color: rgba(245, 245, 245, 0.774);
+}
+
+.help a{
+font-size: 1.2rem;
+color: rgb(5, 160, 160);
+border-bottom: 1px solid rgb(5, 160, 160);
+}
+
+
+
+
+@media only screen and (max-width: 968px){
+
+
+.nav-greet{
+width: 60%;
+font-size: 0.9rem;
+}  
+
+.burger .bar {
+display: block;
+width: 33px;
+height: 5px;
+margin: 2px;
+}
+
+.burger .bar:nth-child(1) {
+width: 34px;
+}
+
+.burger .bar:nth-child(2) {
+width: 24px;
+}
+
+.burger .bar:nth-child(3) {
+width: 10px;
+}
+
+
+.burger.active .bar:nth-child(2) {
+opacity: 0;
+}
+
+.burger.active .bar:nth-child(1) {
+transform: translateY(9px) rotate(45deg);
+width: 30px;
+}
+
+.burger.active .bar:nth-child(3) {
+transform: translateY(-9px) rotate(-45deg);
+width: 30px;
+}
+
+
+
+.yourd{
+font-size: 0.9rem;
+}
+
+
+.back{
+width: 45%;
+color: rgba(240, 248, 255, 0.712);
+font-size: 1.15rem;
+}
+
+.dash .active{
+left: -4%;
+}
+
+
+
+
+.acc-bal{
+width: 100%;
+display: flex;
+flex-direction: column;
+padding: 0;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.acc-bal .bal{
+width: 92%;
+margin-bottom: 12px;
+}
+.acc-bal .bal p{
+padding-top: 5px;
+}
+
+.acc-bal .bal h2{
+opacity: 90%;
+}
+
+
+.dw div{
+width: 47%;
+}
+
+.dw a{
+color: rgba(241, 241, 241, 0.808);
+padding: 15px;
+}
+
+footer{
+padding-top: 30px;
+}
+
+}
